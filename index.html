@@ -5,61 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joey Lee | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
   <style>
     /* Reset & fonts */
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Montserrat', sans-serif; color:#333; line-height:1.6; }
+    body { font-family: 'Montserrat', sans-serif; color:#333; line-height:1.6; font-size:1.1rem; }
     a { text-decoration:none; color:#0077cc; }
-    header, section { padding:60px 20px; }
-    h1,h2,h3 { margin-bottom:20px; }
+    html { scroll-behavior: smooth; }
 
     /* Navigation */
-    nav { position:fixed; width:100%; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); display:flex; justify-content:space-between; align-items:center; padding:15px 30px; z-index:1000; }
-    nav a { margin-left:20px; font-weight:600; }
+    nav {
+      position:fixed;
+      width:100%;
+      background:#fff;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 30px;
+      z-index:1000;
+    }
+    nav a {
+      margin-left:20px;
+      font-weight:600;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+    nav a:hover {
+      color:#005fa3;
+      text-decoration: underline;
+    }
 
     /* Hero Section */
-    .hero .subtitle {
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 15px;
+    .hero {
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      text-align:center;
+      background:#f4f4f4;
+      padding:0 20px;
     }
-  
-    .hero .hero-description {
-      font-size: 1.1rem;
-      max-width: 600px;
-      text-align: center;
-      line-height: 1.6;
-    }
-  
-    /* About Me Paragraph Spacing */
-    #about p {
-      margin-bottom: 20px; /* space between paragraphs */
-      line-height: 1.7;
-    }
-    
+    .hero h1 { font-size:3rem; margin-bottom:10px; }
+    .hero .subtitle { font-size:1.3rem; font-weight:500; margin-bottom:15px; }
+    .hero .hero-description { font-size:1.1rem; max-width:600px; line-height:1.6; }
+
     /* Sections */
-    section { max-width:1000px; margin:0 auto; }
+    section { max-width:1000px; margin:0 auto; padding:80px 20px; }
+    h2 { margin-bottom:25px; }
+
+    /* About Me */
+    #about p { margin-bottom:20px; line-height:1.7; }
 
     /* Projects */
     .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
-    .project-card { border:1px solid #ddd; border-radius:8px; padding:20px; background:#fff; transition:transform 0.3s; }
-    .project-card:hover { transform:translateY(-5px); }
+    .project-card {
+      border:1px solid #ddd;
+      border-radius:8px;
+      padding:20px;
+      background:#fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
     .project-card h3 { margin-bottom:10px; }
     .project-card p { margin-bottom:10px; }
-    .project-card a { font-weight:bold; }
+    .project-card a { font-weight:bold; display:block; margin-bottom:5px; }
+    .project-card img {
+      width:100%;
+      border-radius:6px;
+      margin-bottom:10px;
+      transition: transform 0.3s;
+    }
+    .project-card img:hover { transform: scale(1.03); }
 
     /* Skills */
     .skills { display:flex; flex-wrap:wrap; gap:15px; }
-    .skill { background:#0077cc; color:#fff; padding:8px 15px; border-radius:20px; }
+    .skill {
+      background:#0077cc;
+      color:#fff;
+      padding:8px 15px;
+      border-radius:20px;
+      transition: background 0.3s;
+    }
+    .skill:hover { background:#005fa3; cursor:default; }
 
     /* Contact */
-    .contact a { display:inline-block; margin-right:15px; }
+    .contact a {
+      display:inline-block;
+      margin-right:15px;
+      padding:8px 15px;
+      background:#0077cc;
+      color:#fff;
+      border-radius:5px;
+      font-weight:600;
+      transition: background 0.3s;
+    }
+    .contact a:hover { background:#005fa3; }
 
     /* Footer */
     footer { text-align:center; padding:20px; background:#f4f4f4; margin-top:40px; }
 
+    /* Responsive */
     @media(max-width:768px){
       .hero h1 { font-size:2.2rem; }
+      .projects { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -77,82 +129,62 @@
     </div>
   </nav>
 
-<!-- Hero Section -->
-<section class="hero" id="home">
-  <h1>Joey Lee</h1>
-  <p>Aspiring Business & IT Professional</p>
-  <p>
-    Passionate about bridging business needs and technology solutions. 
-    Experienced in data analysis, software development, and building interactive dashboards 
-    using tools like Python, SQL, Power BI, and Tableau.
-  </p>
-</section>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Joey Lee</h1>
+    <p class="subtitle">Aspiring Business & IT Professional</p>
+    <p class="hero-description">
+      Passionate about bridging business needs and technology solutions. Experienced in data analysis, software development, 
+      and building interactive dashboards using tools like Python, SQL, Power BI, and Tableau.
+    </p>
+  </section>
 
   <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Joey Lee, an aspiring professional with a Diploma in Business Information Systems. 
+      I am passionate about leveraging technology to solve business challenges and creating solutions that drive efficiency and impact.
+    </p>
+    <p>
+      My studies have equipped me with a unique combination of business knowledge and IT skills. I have experience in programming, data analysis, and business systems, 
+      using tools such as Python, SQL, Power BI, Tableau, and Java to turn data into actionable insights and support decision-making.
+    </p>
+    <p>
+      I enjoy working at the intersection of business and technology, analyzing processes, identifying opportunities, 
+      and developing solutions that help organizations achieve their goals.
+    </p>
+    <p>
+      I am currently seeking opportunities to further develop my skills and contribute to projects where I can combine my business understanding with technology to deliver meaningful results.
+    </p>
+  </section>
 
- <section id="about">
-  <h2>About Me</h2>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Hotel Performance Analytics</h3>
+        <a href="dashboard.png" target="_blank">
+          <img src="dashboard.png" alt="Power BI Dashboard">
+        </a>
+        <p>
+          Built an interactive Power BI dashboard analyzing hotel occupancy, revenue trends and seasonal demand to uncover business insights.
+        </p>
+        <p><strong>Tech Stack:</strong> Power BI, Power Query, DAX</p>
+        <a href="#">View Dashboard</a>
+        <a href="https://docs.google.com/presentation/d/1231ZYq12NWGjvd0BoX_8W-PVlPcx9D2_/edit" target="_blank">View Slides</a>
+      </div>
 
-  <p>
-  Hello! I'm Joey Lee, an aspiring professional with a Diploma in Business Information Systems. 
-  I am passionate about leveraging technology to solve business challenges and creating solutions 
-  that drive efficiency and impact.
-  </p>
-
-  <p>
-  My studies have equipped me with a unique combination of business knowledge and IT skills. I have 
-  experience in programming, data analysis, and business systems, using tools such as Python, SQL, 
-  Power BI, Tableau, and Java to turn data into actionable insights and support decision-making.
-  </p>
-
-  <p>
-  I enjoy working at the intersection of business and technology, analyzing processes, identifying 
-  opportunities, and developing solutions that help organizations achieve their goals.
-  </p>
-
-  <p>
-  I am currently seeking opportunities to further develop my skills and contribute to projects 
-  where I can combine my business understanding with technology to deliver meaningful results.
-  </p>
-</section>
-
- <!-- Projects -->
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="projects">
-
-    <!-- Project 1 -->
-    <div class="project-card">
-      <h3>Hotel & Tourism Performance Analytics</h3>
-      
-      <img src="dashboard.png" alt="Power BI Dashboard" style="width:100%; border-radius:6px; margin-bottom:10px;">
-
-      
-      <p>
-      Built an interactive Power BI dashboard analyzing hotel occupancy,
-      revenue trends and seasonal demand to uncover business insights.
-      </p>
-
-      <p><strong>Tech Stack:</strong> Power BI, Power Query, DAX</p>
-
-      <a href="#" target="_blank">View Dashboard</a><br>
-      <a href="https://docs.google.com/presentation/d/1231ZYq12NWGjvd0BoX_8W-PVlPcx9D2_/edit?usp=sharing" target="_blank">View Slides</a><br>
-
+      <div class="project-card">
+        <h3>Project Title 2</h3>
+        <p>Short description of the project and its purpose.</p>
+        <p><strong>Tech Stack:</strong> Java, Tableau</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Project 2 -->
-    <div class="project-card">
-      <h3>Project Title 2</h3>
-      <p>Short description of the project and its purpose.</p>
-      <p><strong>Tech Stack:</strong> Java, Tableau</p>
-      <a href="#" target="_blank">View Project</a>
-    </div>
-
-  </div>
-</section>
-
-  
   <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
