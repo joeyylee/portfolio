@@ -78,6 +78,7 @@
       border-radius:6px;
       margin-bottom:10px;
       transition: transform 0.3s;
+      cursor: pointer;
     }
     .project-card img:hover { transform: scale(1.03); }
 
@@ -165,9 +166,7 @@
     <div class="projects">
       <div class="project-card">
         <h3>Hotel Performance Analytics</h3>
-        <a href="dashboard.png" target="_blank">
-          <img src="dashboard.png" alt="Power BI Dashboard">
-        </a>
+        <img src="dashboard.png" alt="Power BI Dashboard" class="clickable-img">
         <p>
           Built an interactive Power BI dashboard analyzing hotel occupancy, revenue trends and seasonal demand to uncover business insights.
         </p>
@@ -178,6 +177,7 @@
 
       <div class="project-card">
         <h3>Project Title 2</h3>
+        <img src="project2.png" alt="Project 2 Screenshot" class="clickable-img">
         <p>Short description of the project and its purpose.</p>
         <p><strong>Tech Stack:</strong> Java, Tableau</p>
         <a href="#" target="_blank">View Project</a>
@@ -203,26 +203,50 @@
   <section id="achievements">
     <h2>Achievements & Certifications</h2>
     <ul>
-      <li>Certification 1 - Google Project Management</li>
-      <li>Certification 2 - Google Business Intelligence</li>
-      <li>Certification 3 - Google Data Analytics</li>
-      <!-- Add more achievements -->
+      <li>Google Project Management</li>
+      <li>Google Business Intelligence</li>
+      <li>Google Data Analytics</li>
     </ul>
   </section>
 
   <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:shjoeylee@gmail.com"> shjoeylee@gmail.com</a></p>
+    <p>Email: <a href="mailto:shjoeylee@gmail.com">shjoeylee@gmail.com</a></p>
     <p>
       <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
-      <a href="https://joeyylee.github.io/portfolio/" target="_blank">GitHub</a>
+      <a href="https://github.com/joeyylee" target="_blank">GitHub</a>
     </p>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Joey Lee. All rights reserved.</p>
   </footer>
+
+  <!-- Image Modal -->
+  <div id="imgModal" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.8);">
+    <span id="closeModal" style="position:absolute; top:20px; right:35px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
+    <img id="modalImg" style="margin:auto; display:block; max-width:90%; max-height:90%; position:relative; top:50%; transform:translateY(-50%);">
+  </div>
+
+  <!-- Modal Script -->
+  <script>
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
+    const images = document.querySelectorAll(".clickable-img");
+
+    images.forEach(img => {
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+      }
+    });
+
+    closeModal.onclick = function() { modal.style.display = "none"; }
+    modal.onclick = function(e) { if(e.target === modal){ modal.style.display = "none"; } }
+  </script>
 
 </body>
 </html>
