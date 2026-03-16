@@ -93,9 +93,31 @@
 
     
     /* Sections */
-    section { max-width:1000px; margin:0 auto; padding:80px 20px; }
-    h2 { margin-bottom:25px; }
+    
+    section{
+      max-width:1100px;
+      margin:80px auto;
+      padding:0 20px;
+    }
 
+    section h2{
+      text-align:center;
+      margin-bottom:40px;
+      font-size:28px;
+      position:relative;
+    }
+    
+    section h2::after{
+      content:"";
+      display:block;
+      width:60px;
+      height:3px;
+      background:#0077cc;
+      margin:10px auto 0;
+      border-radius:2px;
+    }
+
+    
     /* About Me */
     #about p { margin-bottom:20px; line-height:1.7; }
 
