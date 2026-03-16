@@ -12,6 +12,11 @@
     body { font-family: 'Montserrat', sans-serif; color:#333; line-height:1.6; font-size:1.1rem; }
     a { text-decoration:none; color:#0077cc; }
     html { scroll-behavior: smooth; }
+    section{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+    }
 
     /* Navigation */
     nav {
@@ -49,7 +54,44 @@
     .hero h1 { font-size:3rem; margin-bottom:10px; }
     .hero .subtitle { font-size:1.3rem; font-weight:500; margin-bottom:15px; }
     .hero .hero-description { font-size:1.1rem; max-width:600px; line-height:1.6; }
+    .profile-pic{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    border:4px solid white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  }
 
+    .profile-pic{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+  border:4px solid white;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+  .hero-buttons{
+    margin-top:20px;
+  }
+  
+  .hero-buttons a{
+    display:inline-block;
+    margin:10px;
+    padding:10px 20px;
+    background:#0077cc;
+    color:white;
+    border-radius:5px;
+    font-weight:600;
+  }
+  
+  .hero-buttons a:hover{
+    background:#005fa3;
+  }
+
+    
     /* Sections */
     section { max-width:1000px; margin:0 auto; padding:80px 20px; }
     h2 { margin-bottom:25px; }
@@ -80,8 +122,11 @@
       transition: transform 0.3s;
       cursor: pointer;
     }
-    .project-card img:hover { transform: scale(1.03); }
-
+    .project-card img:hover{
+      transform:scale(1.05);
+      transition:0.3s;
+    }
+    
     /* Skills */
     .skills { display:flex; flex-wrap:wrap; gap:15px; }
     .skill {
@@ -132,12 +177,23 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
+    <img src="profile.jpg" class="profile-pic" alt="Joey Lee">
+  
     <h1>Joey Lee</h1>
-    <p class="subtitle">Aspiring Business & IT Professional</p>
+  
+    <p class="subtitle">Business Information Systems Graduate</p>
+  
     <p class="hero-description">
-      Passionate about bridging business needs and technology solutions. Experienced in data analysis, software development, 
-      and building interactive dashboards using tools like Python, SQL, Power BI, and Tableau.
+      Passionate about using technology and data to solve business problems.
+      Skilled in data analysis, dashboard development, and software solutions
+      using Python, SQL, Power BI, and Tableau.
     </p>
+  
+    <div class="hero-buttons">
+      <a href="#projects">View Projects</a>
+      <a href="resume.pdf" download>Download Resume
+    </div>
+    </a>
   </section>
 
   <!-- About Me -->
@@ -161,19 +217,35 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Hotel Performance Analytics</h3>
-        <img src="dashboard.png" alt="Power BI Dashboard" class="clickable-img">
-        <p>
-          Built an interactive Power BI dashboard analyzing hotel occupancy, revenue trends and seasonal demand to uncover business insights.
-        </p>
-        <p><strong>Tech Stack:</strong> Power BI, Power Query, DAX</p>
-        <a href="#">View Dashboard</a>
-        <a href="https://docs.google.com/presentation/d/1231ZYq12NWGjvd0BoX_8W-PVlPcx9D2_/edit" target="_blank">View Slides</a>
-      </div>
+    <div class="project-card">
+    
+    <h3>📊 Hotel & Tourism Performance Analytics</h3>
+    
+    <img src="dashboard.png" alt="Power BI Dashboard" class="clickable-img">
+    
+    <p>
+    Interactive Power BI dashboard analyzing hotel occupancy trends, revenue
+    performance, and seasonal demand patterns.
+    </p>
+    
+    <p><strong>Key Insights</strong></p>
+    
+    <ul>
+    <li>Identified peak seasonal demand periods</li>
+    <li>Analyzed occupancy trends across multiple years</li>
+    <li>Highlighted revenue growth opportunities</li>
+    </ul>
+    
+    <p><strong>Tech Stack:</strong> Power BI, Power Query, DAX</p>
+    
+    <a href="https://docs.google.com/presentation/d/1231ZYq12NWGjvd0BoX_8W-PVlPcx9D2_/edit" target="_blank">
+    View Project Slides
+      <a href="tourism_hotel_analysis.pbix" download>
+      Download Power BI File
+      </a>
+    </a>
+    
+    </div>
 
       <div class="project-card">
         <h3>Project Title 2</h3>
@@ -185,29 +257,51 @@
     </div>
   </section>
 
+  <div class="project-card">
+    <h3>More Projects Coming</h3>
+    
+    <p>
+    I am currently working on additional projects involving data analysis,
+    business intelligence dashboards, and software development.
+    </p>
+    
+    <p><strong>Upcoming Technologies</strong></p>
+    
+    <ul>
+    <li>Python Data Analysis</li>
+    <li>SQL Database Projects</li>
+    <li>Interactive Dashboards</li>
+    </ul>
+    
+    </div>
+
   <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
-      <div class="skill">Python</div>
-      <div class="skill">Java</div>
-      <div class="skill">SQL</div>
-      <div class="skill">Tableau</div>
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">Power BI</div>
-    </div>
+    <div class="skill">Python</div>
+    <div class="skill">SQL</div>
+    <div class="skill">Java</div>
+    <div class="skill">Power BI</div>
+    <div class="skill">Tableau</div>
+    <div class="skill">Power Query</div>
+    <div class="skill">DAX</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+  </div>
   </section>
 
   <!-- Achievements -->
-  <section id="achievements">
-    <h2>Achievements & Certifications</h2>
-    <ul>
-      <li>Google Project Management</li>
-      <li>Google Business Intelligence</li>
-      <li>Google Data Analytics</li>
-    </ul>
-  </section>
+<section id="achievements">
+<h2>Certifications</h2>
+
+<ul>
+<li>Google Data Analytics Professional Certificate</li>
+<li>Google Business Intelligence Professional Certificate</li>
+<li>Google Project Management Professional Certificate</li>
+</ul>
+
+</section>
 
   <!-- Contact -->
   <section id="contact">
@@ -220,9 +314,10 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Joey Lee. All rights reserved.</p>
-  </footer>
+    <footer>
+    <p>© 2025 Joey Lee</p>
+    <p>Built with HTML, CSS & GitHub Pages</p>
+    </footer>
 
   <!-- Image Modal -->
   <div id="imgModal" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.8);">
@@ -247,6 +342,22 @@
     closeModal.onclick = function() { modal.style.display = "none"; }
     modal.onclick = function(e) { if(e.target === modal){ modal.style.display = "none"; } }
   </script>
+
+  <script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(section => {
+    const position = section.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+
+    if(position < screenPosition){
+      section.style.opacity = 1;
+      section.style.transform = "translateY(0)";
+    }
+  });
+});
+</script>
 
 </body>
 </html>
