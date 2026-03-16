@@ -100,7 +100,12 @@
     #about p { margin-bottom:20px; line-height:1.7; }
 
     /* Projects */
-    .projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+        justify-content: center; /* center the grid */
+        gap: 20px;
+      }
     .project-card {
       border:1px solid #ddd;
       border-radius:8px;
