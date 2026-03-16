@@ -100,13 +100,15 @@
     #about p { margin-bottom:20px; line-height:1.7; }
 
         /* Projects */
-        .projects {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
-          gap: 20px;
-          justify-content: center;
-          max-width: 900px;
-          margin: 0 auto;
+        #projects{
+          display:flex;
+          justify-content:center;
+        }
+        
+        .projects{
+          display:grid;
+          grid-template-columns:repeat(auto-fit,minmax(280px,300px));
+          gap:20px;
         }
               
       .project-card {
@@ -230,6 +232,8 @@
   </section>
 
   <!-- Projects -->
+ <section id="projects">
+  <div class="projects">
     <div class="project-card">
     
     <h3>📊 Hotel & Tourism Performance Analytics</h3>
