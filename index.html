@@ -100,22 +100,31 @@
     #about p { margin-bottom:20px; line-height:1.7; }
 
         /* Projects */
-      .project-card {
+      .projects {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        justify-content: center; /* center the grid */
         gap: 20px;
+      
+        /* centers the whole grid block */
+        max-width: 1200px;
+        margin: 0 auto;
+      
+        /* centers each card inside its grid cell */
+        justify-items: center;
+      }
+      
+      .project-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        background: #fff;
+        transition: transform 0.3s, box-shadow 0.3s;
+      
+        /* keep cards consistent */
+        width: 100%;
+        max-width: 350px;
       }
 
-      }
-    .project-card {
-      border:1px solid #ddd;
-      border-radius:8px;
-      height:100vh;
-      padding:20px;
-      background:#fff;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 4px 15px rgba(0,0,0,0.15);
