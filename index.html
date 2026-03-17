@@ -78,7 +78,7 @@
     }
         
     /* Hide nav links by default on small screens */
-    .nav-links {
+    .nav {
       display: flex; /* keep desktop links visible initially */
       list-style: none;
       gap: 20px;
@@ -92,7 +92,7 @@
 
     /* Mobile view */
     @media (max-width: 768px) {
-      .nav-links {
+      .nav {
         display: none; /* hide links on mobile by default */
         flex-direction: column;
         gap: 10px;
@@ -105,7 +105,7 @@
         border-radius: 5px;
       }
     
-      .nav-links.active {
+      .nav.active {
         display: flex;
       }
     
