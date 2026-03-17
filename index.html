@@ -76,19 +76,43 @@
       margin: 0;
       padding-top: 80px; /* adjust to match nav height */
     }
-
-        /* Hide links by default on small screens */
+        
+    /* Hide nav links by default on small screens */
     .nav-links {
-      display: none;
-      flex-direction: column;
+      display: flex; /* keep desktop links visible initially */
+      list-style: none;
+      gap: 20px;
     }
     
-    /* Show links when active */
-    .nav-links.active {
-      display: flex;
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
     }
-        
 
+    /* Mobile view */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; /* hide links on mobile by default */
+        flex-direction: column;
+        gap: 10px;
+        background: #fff;
+        position: absolute;
+        top: 70px; /* just below nav */
+        right: 30px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-radius: 5px;
+      }
+    
+      .nav-links.active {
+        display: flex;
+      }
+    
+      .menu-toggle {
+        display: block;
+      }
+    }
     /* Hero Section */
     .hero {
       display:flex;
