@@ -132,99 +132,87 @@
     /* About Me */
     #about p { margin-bottom:20px; line-height:1.7; }
 
-        /* Projects */
-      #projects{
-        max-width:1200px;
-        margin:0 auto;
-        padding:40px 20px;
-      }
-      
-      /* Project Grid */
-      .projects{
-        display:grid;
-        grid-template-columns:1fr;
-        gap:30px;
-        max-width:800px;
-        margin:0 auto;
-      }
-            
-      /* Project Card */
-      .project-card{
-        border:1px solid #ddd;
-        border-radius:10px;
-        padding:40px;
-        background:#fff;
-        transition:transform 0.3s, box-shadow 0.3s;
-      }
-      
-      .project-card:hover{
-        transform:translateY(-6px);
-        box-shadow:0 6px 18px rgba(0,0,0,0.15);
-      }
-      
-      .project-card h3{
-        margin-bottom:10px;
-      }
-      
-      .project-card p{
-        margin-bottom:10px;
-        line-height:1.5;
-      }
-      .project-card{
-      text-align:center;
-      }
-      
-      /* Image Styling */
-      .project-card img{
-        width:100%;
-        max-height:1600px;
-        object-fit:contain;
-        background:#f5f5f5;
-        border-radius:6px;
-        margin-bottom:12px;
-      }
-      
-      .project-card img:hover{
-        transform:scale(1.05);
-      }
-      
-      /* Links */
-        .project-card a{
-      display:inline-block;
-      margin-top:10px;
-      padding:8px 14px;
-      background:#0077cc;
-      color:#fff;
-      text-decoration:none;
-      border-radius:6px;
-      font-weight:600;
-      transition: background 0.3s;
-    }
-     .project-card ul{
-      display: inline-block;
-      text-align: left;
-      margin-top: 10px;
-    }
-    
-    .project-card a:hover{
-      background:#005fa3;
-    }
+/* Projects Section */
+#projects {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
 
-    .project-card ul {
-      margin-bottom: 20px;
-    }
-    
-    .project-card p {
-      margin-top: 10px;
-    }
-    .project-card ul {
-      display: inline-block;
-      text-align: left;   /* keeps text nicely aligned */
-    }
+/* Project Grid */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    .project {
-      text-align: center; /* parent div */
-    }
+/* Project Card */
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 40px;
+  background: #fff;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Text */
+.project-card h3 {
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Image */
+.project-card img {
+  width: 100%;
+  max-height: 1600px;
+  object-fit: contain;
+  background: #f5f5f5;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: transform 0.3s;
+}
+
+.project-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Bullet List (FIXED CENTERING) */
+.project-card ul {
+  display: inline-block;
+  text-align: left;
+  margin: 10px 0 20px;
+  padding-left: 20px;
+  max-width: 500px; /* optional but improves readability */
+}
+
+/* Button */
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #0077cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.project-card a:hover {
+  background: #005fa3;
+}
                   
     /* Skills */
     .skills { display:flex; flex-wrap:wrap; gap:15px; }
