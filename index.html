@@ -76,44 +76,7 @@
       margin: 0;
       padding-top: 80px; /* adjust to match nav height */
     }
-        
-    /* Hide nav links by default on small screens */
-    .nav {
-      display: flex; /* keep desktop links visible initially */
-      list-style: none;
-      gap: 20px;
-    }
-    
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
 
-    /* Mobile view */
-    @media (max-width: 768px) {
-      .nav {
-        display: none; /* hide links on mobile by default */
-        flex-direction: column;
-        gap: 10px;
-        background: #fff;
-        position: absolute;
-        top: 70px; /* just below nav */
-        right: 30px;
-        padding: 15px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        border-radius: 5px;
-      }
-    
-      .nav.active {
-        display: flex;
-      }
-    
-      .menu-toggle {
-        display: block;
-        cursor: pointer;
-      }
-    }
     /* Hero Section */
     .hero {
       display:flex;
@@ -582,26 +545,6 @@ window.addEventListener("scroll", revealSections);
 
 // Run once on page load
 window.addEventListener("DOMContentLoaded", revealSections);
-</script>
-
-  <script>
-  // Select elements
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-
-  // Toggle menu on click
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-</script>
-
-  <script>
-  const navItems = document.querySelectorAll("#nav-links li a");
-  navItems.forEach(item => {
-    item.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-    });
-  });
 </script>
 
 </body>
