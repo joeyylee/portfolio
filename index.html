@@ -76,7 +76,18 @@
       margin: 0;
       padding-top: 80px; /* adjust to match nav height */
     }
+
+        /* Hide links by default on small screens */
+    .nav-links {
+      display: none;
+      flex-direction: column;
+    }
     
+    /* Show links when active */
+    .nav-links.active {
+      display: flex;
+    }
+        
 
     /* Hero Section */
     .hero {
@@ -306,6 +317,18 @@
     </div>
   </nav>
 
+  <div class="navbar">
+  <div class="logo">My Portfolio</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links">
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
 
   <!-- Hero Section -->
   <section class="hero" id="home">
@@ -534,6 +557,26 @@ window.addEventListener("scroll", revealSections);
 
 // Run once on page load
 window.addEventListener("DOMContentLoaded", revealSections);
+</script>
+
+  <script>
+  // Select elements
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  // Toggle menu on click
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+  <script>
+  const navItems = document.querySelectorAll("#nav-links li a");
+  navItems.forEach(item => {
+    item.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
 </script>
 
 </body>
